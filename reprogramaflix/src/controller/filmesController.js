@@ -11,7 +11,13 @@ const getById = (request,response) => {
     response.status(200).send(filmes.find(filme => filme.id == id ))
 }
 
+const getByYear = (request,response) => {
+    const year = request.params.year
+    response.status(200).send(filmes.find(oAno => oAno.year == year ))
+}
+
 module.exports = {
     getAll,
-    getById
+    getById,
+    getByYear
 }
