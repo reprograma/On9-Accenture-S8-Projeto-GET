@@ -1,0 +1,24 @@
+{
+  "name": "on9-accenture-s8-projeto-get",
+  "version": "1.0.0",
+  "description": "Aula 8 da Reprograma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milenaalmeida/On9-Accenture-S8-Projeto-GET.git"
+  },
+  "author": "Milena Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milenaalmeida/On9-Accenture-S8-Projeto-GET/issues"
+  },
+  "homepage": "https://github.com/milenaalmeida/On9-Accenture-S8-Projeto-GET#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
