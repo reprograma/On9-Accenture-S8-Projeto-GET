@@ -16,10 +16,22 @@ const getByTitle = (req,res) =>{
     res.status(200).send(series.find(serie => serie.title == title ))
 }
 
+const getBygenre = (req, res) => {
+    const genre = req.query.genre;
+    let serie;
+    let newList = [];
+    for (let index = 0; index < series.length; index++) {
+        serie = series[index];
+        if (serie.genre.includes(genre)) {
+            newList.push(serie)
+        }
+    }
+    res.status(200).send(newList)
+}
 
 module.exports = {
     getAll,
     getById,
     getByTitle,
-
+    getBygenre
 }
