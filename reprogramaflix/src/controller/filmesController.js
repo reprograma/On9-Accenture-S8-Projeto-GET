@@ -11,12 +11,36 @@ const getById = (req, res) => {
 }
 
 const getByYear = (req, res) => {
-    const year = req.params.Year;
-    res.status(200).send(filmes.find(filme => filme.Year == year ))
+    const year = req.params.ano;
+    res.status(200).send(filmes.find(filme => filme.Year == ano ))
+}
+
+const getByTitle = (req, res) => {
+    const title = req.query.titulo;
+    res.send(200).send(filmes.find(filme => filme.Title == titulo))
+}
+
+const getByGenre = (req, res) => {
+    const genero = req.query.genero;
+    let novaLista = [];
+
+    filmes.forEach(filme => {
+        let generoList = filme.Genre.split(",")
+        console.log(generoList);
+        for(item of generoList){
+            if(item.includes(genero) && filme.Genero.includes(item)){
+                novaLista.push(filme);
+            }
+        };
+    })
+
+    res.status(200).send(novaLista);
 }
 
 module.exports = {
     getAll,
     getById,
-    getByYear
+    getByYear,
+    getByTitle,
+    getByGenre
 }
