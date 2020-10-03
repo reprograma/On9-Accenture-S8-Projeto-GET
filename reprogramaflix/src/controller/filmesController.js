@@ -13,7 +13,7 @@ const getById = (req, res) => {
 
 const getByTitle = (req, res) => {
     const titulo = req.query.titulo
-    res.status(200).send(filmes.find(filme => filme.Title =- titulo)) //quero que a variavel Title do json seja igual o nosso titulo
+    res.status(200).send(filmes.find(filme => filme.Title == titulo)) //quero que a variavel Title do json seja igual o nosso titulo
 }
 
 const getByGenre = (req, res) => {

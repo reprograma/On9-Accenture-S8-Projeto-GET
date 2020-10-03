@@ -7,7 +7,7 @@ const getAll = (req,res) =>{
 
 const getById = (req, res) => {
     const id = req.params.id
-    res.status(200).sen(filmes.fins(filme => filme.id == id))
+    res.status(200).send(series.find(series => series.id == id))
 }
 
 
