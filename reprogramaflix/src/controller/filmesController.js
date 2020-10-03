@@ -32,7 +32,7 @@ const getByGenre = (req, res) => {
         }
     }) 
 
-    response.status(200).send(NovaLista) //enviando a novaLista com o filme adicionado
+    res.status(200).send(NovaLista) //enviando a novaLista com o filme adicionado
 }
 
 module.exports = {   //ele exporta para ser usado em qualquer outro lugar do nosso arquivo uma função ou um arquivo       
