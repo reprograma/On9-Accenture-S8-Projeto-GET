@@ -1,0 +1,16 @@
+{
+  "name": "reprogramaflix",
+  "version": "1.0.0",
+  "description": "Repositorio para servidor da reprograma S8\u001b[D\u001b[D\u001b[D - S8",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Michelle Silva",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
