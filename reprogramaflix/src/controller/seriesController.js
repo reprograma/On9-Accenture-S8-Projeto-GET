@@ -12,7 +12,24 @@ const getById = (request, response) => {
   response.status(200).send(series.find(serie => serie.id == id));
 };
 
+const getByGenre = (request, response) => {
+    const genero = request.query.genero;
+    let novaLista = [];
+  
+    series.forEach((serie) => {
+      let generoList = serie.genre;
+      for (item of generoList) {
+        if (item.includes(genero) && serie.genre.includes(item)) {
+          console.log(serie);
+          novaLista.push(serie);
+        }
+      }
+    });
+    response.status(200).send(novaLista);
+  };
+
 module.exports = {
   getAll,
   getById,
+  getByGenre
 };
