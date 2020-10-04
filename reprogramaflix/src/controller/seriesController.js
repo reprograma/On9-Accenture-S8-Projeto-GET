@@ -17,9 +17,28 @@ const getByTitle = (request, response) =>{
     //response.send
 }
 
+const getActor = (request, response) =>{
+    const actor = request.query.actors
+    let novaLista = []
+
+    series.forEach(actor =>{
+        let actorList = actor.actors.split(",")
+            for(item of actorList){
+            if(item.includes(actor) && series.actors.includes(item)){
+                console.log(actor)
+                novaLista.push(actor)
+
+            }
+        }
+    })
+
+    response.status(200).send(novaLista)
+}
+
 module.exports ={
     //esse module.exports exporta uma função ou arquivo. Assim, sabe-se que utilizaremos o elemento fora desse arquivo
     getAll,
     getById,
     getByTitle,
+    getActor
 }
