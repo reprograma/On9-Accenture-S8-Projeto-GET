@@ -19,6 +19,7 @@ const getByTitle = (request, response) =>{
 
 const getByGenre = (request, response) =>{
     const genero = request.query.genero
+    let novaLista = []
 
     filme.forEach(filme =>{
         let generoList = filme.Genre.split(",");
@@ -29,7 +30,7 @@ const getByGenre = (request, response) =>{
             }
         }
     })
-
+    response.status(200).send(novaLista)
 }
 
 module.exports ={
